@@ -13,8 +13,8 @@ El objetivo principal es probar como aplicar un asistente a esta tarea, usando u
 - **Entornos y marco de trabajo** - Para este proyecto, estaré usando un entorno de Conda, junto con VSCode.
 
 - **Los scripts** - El proyecto consta de dos scripts principales:
-  - `[app.py](app.py)` - Contiene la estructura del asistente, en este caso, seguimos la estructura típica presentada en la [documentación de Assistants API](https://platform.openai.com/docs/assistants/overview?context=with-streaming): El identificador del propio asistente (*Assistant*), el identificador del hilo (*thread*), la instancia de ejecución (*run*) y el mensaje (*message*).
-  - `[main.py](main.py)` - Contiene las configuraciones para la App de *Streamlit*.
+  - [app.py](app.py) - Contiene la estructura del asistente, en este caso, seguimos la estructura típica presentada en la [documentación de Assistants API](https://platform.openai.com/docs/assistants/overview?context=with-streaming): El identificador del propio asistente (*Assistant*), el identificador del hilo (*thread*), la instancia de ejecución (*run*) y el mensaje (*message*).
+  - [main.py](main.py) - Contiene las configuraciones para la App de *Streamlit*.
 
 ## Pasos para replicar este proyecto
 
