@@ -24,7 +24,7 @@ default_model = "gpt-4"
 # 2. ---Archivo que usará el asistente---
 
 # Ruta del archivo
-filepath = '2024-02-28.md'
+filepath = 'Muestras-Sueños/2024-02-28.md'
 
 
 # Objeto que corresponde al archivo
