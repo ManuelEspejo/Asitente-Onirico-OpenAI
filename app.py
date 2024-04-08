@@ -66,8 +66,8 @@ file_object = client.files.create(file=open(filepath, "rb"), purpose="assistants
 # print(assis_id)
 
 # Scripts codificados a mano una vez los hemos obtenido por la terminal
-assis_id = "asst_GXPWM4pbbW3FcePgAxznncAV" # None
-thread_id = "thread_7EujENHxi22T5Tuhd754i1og" # None
+assis_id = "asst_GXPWM4pbbW3FcePgAxznncAV" # COMENTAR EN LA PRIMERA EJECUCIÓN
+thread_id = "thread_7EujENHxi22T5Tuhd754i1og" # COMENTAR EN LA PRIMERA EJECUCIÓN
 
 # DESCOMENTAR PARA LA PRIMERA EJECUCIÓN PARA EVITAR CREAR VARIOS THREADS
 ## Creamos el thread
