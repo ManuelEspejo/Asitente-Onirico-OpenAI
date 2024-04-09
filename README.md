@@ -2,21 +2,23 @@
 
 Creando un asistente que lee las entradas de nuestro diario onírico y charla con nosotros sobre nuestros sueños.
 
-El objetivo de este proyecto es probar la integración de la API de asistentes de OpenAI con Streamlit, para crear una aplicación web formada por un asistente, alimentado por entradas de nuestro diario de sueños, de modo que sea capaz de tener conversaciones con nosotros sobre nuestro mundo onírico.
+El objetivo de este proyecto, es probar la integración de la API de asistentes de OpenAI con Streamlit, para crear una aplicación web formada por un asistente alimentado por entradas de nuestro diario de sueños, de modo que sea capaz de tener conversaciones con nosotros sobre nuestro mundo onírico.
 
-Para esto, usamos un par de sueños de muestra generados con ChatGPT4. Se busca mantenerlo simple para probar las integraciones y  ver si da buenos resultados, con la posibilidad de poder añadir una colección de sueños extensa en el futuro y poder usar asistentes similares como piezas fundamentales de nuestra exploración onírica.
+Para esto, usamos un par de sueños de muestra generados con ChatGPT4.
+
+Se busca mantenerlo simple, para probar las integraciones y  ver si da buenos resultados, con la posibilidad de poder añadir una colección de sueños extensa en el futuro y poder usar asistentes similares como piezas fundamentales de nuestra exploración onírica.
 
 ## Estructura del proyecto
 
-**Referencia** - La estructura principal de este proyecto está inspirada en la presentada en este [repositorio](https://github.com/pdichone/vincibits-study-buddy-knwoledge-retrieval). Aquí, se crea un asistente que funciona como compañero de estudio. Este recibe documentos a los que es capaz de acceder y sacar ideas clave para responder a las preguntas del usuario sobre los temas tratados en ellos.
+**Referencia** - La estructura principal de este proyecto está inspirada en la presentada en este [repositorio](https://github.com/pdichone/vincibits-study-buddy-knwoledge-retrieval). Aquí, se crea un asistente que funciona como compañero de estudio. Este recibe documentos a los que es capaz de acceder para extraer ideas clave, para responder a las preguntas del usuario sobre los temas tratados en ellos.
 
 Las partes del proyecto:
 
 - **Entornos y marco de trabajo** - Estaré usando un entorno de Conda, junto con VSCode.
 - **Los scripts** - El proyecto consta de dos scripts principales:
-  - [app.py](app.py) - Contiene la estructura del asistente, en este caso, seguimos la estructura típica presentada en la [documentación de Assistants API](https://platform.openai.com/docs/assistants/overview?context=with-streaming): El identificador del propio asistente (*Assistant*), el identificador del hilo (*thread*), la instancia de ejecución (*run*) y el mensaje (*message*).
+  - [app.py](app.py) - Contiene la estructura del asistente. En este caso, seguimos la estructura típica presentada en la [documentación de Assistants API](https://platform.openai.com/docs/assistants/overview?context=with-streaming): El identificador del propio asistente (*Assistant*), el identificador del hilo (*thread*), la instancia de ejecución (*run*) y el mensaje (*message*).
   - [main.py](main.py) - Contiene las configuraciones para la App de *Streamlit*.
-- **Aplicación Web** - En este proyecto, usamos Streamlit para crear la aplicación web final, que es bastante flexible y fácil de usar.
+- **Aplicación Web** - Usaremos Streamlit para crear la aplicación web final, que es bastante flexible y fácil de usar.
 
 ## Pasos para replicar este proyecto
 
@@ -90,6 +92,7 @@ recomendaciones ofrecidas.
 ```
 
 #### Pasos para ejecutarlo
+---
 
 1. Descomentar los siquientes fragmentos de la parte 3 de `app.py`:
 
@@ -156,7 +159,7 @@ Este fichero corresponde a la estructura de la aplicación final de Streamlit, q
 
 - Mostrar las respuestas y permitir al usuario continuar la conversación.
 
-- Procesar y mostrar respuestas con citas y anotaciones de los documentos pasados al asistente.
+- Procesar y mostrar respuestas con citas y anotaciones de los documentos pasados al asistente si se requiere.
 
 #### Pasos para ejecutarlo
 ---
