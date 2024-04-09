@@ -18,12 +18,13 @@ load_dotenv()
 client = openai.OpenAI()
 
 # Escogemos el modelo
-default_model = "gpt-4" 
+default_model = "gpt-4-turbo-preview" 
 
 # IDs del asistente y del thread
 # IDs incluidos a mano una vez hemos ejecutado por primera vez el script (app.py)
-assis_id = "asst_GXPWM4pbbW3FcePgAxznncAV"
-thread_id = "thread_7EujENHxi22T5Tuhd754i1og"
+assis_id = "asst_UnPj5l8tNbyFxaQ4gvLjJ7rw"
+thread_id = "thread_uGmHPd5c1R8CXAft2af59Jfv"
+
 
 # 2. ---Comprobamos si los valores se encuentran en la sesión---
 
@@ -86,11 +87,15 @@ if st.session_state.file_id_list:
     st.sidebar.write("IDs de los archivos:")
     for file_id in st.session_state.file_id_list:
         st.sidebar.write(file_id)
-        # Asociamos cada id de archivo con el asistente actual
-        assistant_file= client.beta.assistants.files.create(
-            assistant_id=assis_id, file_id=file_id
-        )
-        
+        try:
+            # Intentamos asociar cada id de archivo con el asistente
+            assistant_file = client.beta.assistants.files.create(
+                assistant_id=assis_id, file_id=file_id
+            )
+        except Exception as e:
+            print(f"Error al asociar el archivo con ID {file_id} al asistente: {e}")
+
+
         
 # Botón para inicializar la sesión de chat
 if st.sidebar.button("Empezar a chatear..."):
@@ -225,7 +230,7 @@ if st.session_state.start_chat:
     else:
         # Instrucciones para el usuario para comenzar la conversación
         st.write(
-            "Por favor, sube por lo menos un archico para empezar, clickando en el botón 'Start Chat'"
+            "Por favor, sube por lo menos un archivo para empezar, clickando en el botón 'Start Chat'"
         )
         
-# Ejecutar `streamlit run main.py` en la consola para iniciar el script      
+# Ejecutar `streamlit run main.py` en la consola para iniciar el script

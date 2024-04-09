@@ -19,12 +19,12 @@ load_dotenv()
 client = openai.OpenAI()
 
 # Escogemos el modelo
-default_model = "gpt-4" 
+default_model = "gpt-4-turbo-preview" 
 
 # 2. ---Archivo que usará el asistente---
 
 # Ruta del archivo
-filepath = 'Muestras-Sueños/2024-02-28.md'
+filepath = 'assets/dreams/2024-02-28.md'
 
 
 # Objeto que corresponde al archivo
@@ -33,30 +33,31 @@ file_object = client.files.create(file=open(filepath, "rb"), purpose="assistants
 # 3. ---Creamos el asistente y el hilo---
 
 # DESCOMENTAR SÓLO PARA LA PRIMERA EJECUCIÓN
-# # Creando al asistente
+# Creando al asistente
 # assistant = client.beta.assistants.create(
 #     name="Dream Interpreter",
 #     instructions="""
 #     Eres un experto en el análisis e interpretación de sueños, con un profundo
 #     conocimiento de los trabajos académicos sobre este tema, incluyendo los estudios
-#     estadísticos de William Domhoff. Tu tarea es extraer insights clave de los sueños
-#     de los usuarios, analizándolos para ofrecer reflexiones profundas y respuestas a
-#     preguntas, tanto de naturaleza estadística como introspectiva o filosófica. 
-    
+#     estadísticos de William Domhoff.
+#     Tu tarea es extraer insights clave de los sueños del usuario, analizándolos para ofrecer
+#     reflexiones profundas y respuestas a preguntas, tanto de naturaleza estadística como
+#     introspectiva o filosófica.
 #     - Analizarás los sueños para conversar sobre sus aspectos más relevantes,
 #     utilizando tu comprensión estadística y psicológica.
-#     - Responderás a preguntas sobre los sueños, incluyendo análisis de personajes 
+#     - Responderás a preguntas sobre los sueños, incluyendo análisis de personajes
 #     y objetos presentes.
-#     - Formularás preguntas al usuario para profundizar en la comprensión de sus sueños 
+#     - Formularás preguntas al usuario para profundizar en la comprensión de sus sueños
 #     y sugerirás acciones basadas en tus análisis.
 #     - Mantendrás la confidencialidad de los datos para asegurar un ambiente seguro para
 #     el usuario.
-#     - Aprenderás de cada interacción para mejorar continuamente tu análisis y las 
+#     - Aprenderás de cada interacción para mejorar continuamente tu análisis y las
 #     recomendaciones ofrecidas.
-    
-#     Tu objetivo es facilitar una comprensión profunda de los sueños del usuario, promoviendo
-#     la exploración introspectiva y ofreciendo nuevos caminos de comprensión.""",
-#     tools=[{"type":"retrieval"}],
+#     **Objetivo**: Tu objetivo es facilitar una comprensión profunda de los sueños del usuario,
+#     promoviendo la exploración introspectiva y ofreciendo nuevos caminos de comprensión.
+#     """,
+#     tools=[{"type":"retrieval"},
+#            {"type":"code_interpreter"}],
 #     model=default_model,
 #     file_ids=[file_object.id] # Podemos pasar más de un archivo, por eso lo tenemos en formato lista
 # )
@@ -66,11 +67,11 @@ file_object = client.files.create(file=open(filepath, "rb"), purpose="assistants
 # print(assis_id)
 
 # Scripts codificados a mano una vez los hemos obtenido por la terminal
-assis_id = "asst_GXPWM4pbbW3FcePgAxznncAV" # COMENTAR EN LA PRIMERA EJECUCIÓN
-thread_id = "thread_7EujENHxi22T5Tuhd754i1og" # COMENTAR EN LA PRIMERA EJECUCIÓN
+assis_id = "asst_UnPj5l8tNbyFxaQ4gvLjJ7rw"
+thread_id = "thread_uGmHPd5c1R8CXAft2af59Jfv"
 
 # DESCOMENTAR PARA LA PRIMERA EJECUCIÓN PARA EVITAR CREAR VARIOS THREADS
-## Creamos el thread
+# Creamos el thread
 # thread = client.beta.threads.create()
 
 # # Obtenemos el id del thread
