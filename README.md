@@ -176,7 +176,7 @@ streamlit run /<RUTA-LOCAL>/Asitente-Onirico-OpenAI/main.py # Cambiar <RUTA-LOCA
 ### 4. Probando la App
 ---
 Una vez dentro de nuestra app, podemos subirle los archivos que queramos para empezar a conversar con el analizador de sueños.
-![Imagen](/assets/media/subir-archivos.png)
+![Imagen](/assets/images/subir-archivos.png)
 
 # Bibliografía y profundizar
 
